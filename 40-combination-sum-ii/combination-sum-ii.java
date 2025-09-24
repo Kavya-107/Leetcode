@@ -14,6 +14,7 @@ class Solution {
 
         for(int i=ind;i<candidates.length;i++)
         {
+            if(candidates[i]>target) break;
             temp.add(candidates[i]);
             help(candidates,target-candidates[i],result,temp,i+1);
             while(i+1<candidates.length && candidates[i]==candidates[i+1]) i++;
