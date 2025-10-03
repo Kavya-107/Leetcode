@@ -24,7 +24,6 @@ class Solution {
                 }
                 next=next.next;
             }
-            System.out.println("* "+next.val);
             node.next=next;  
             node=next;
         }
