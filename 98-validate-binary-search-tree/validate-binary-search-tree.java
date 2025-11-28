@@ -14,20 +14,20 @@
  * }
  */
 class Solution {
-    List<Integer> op=new ArrayList<>();
-    public void inorder(TreeNode root)
-    {
-        if(root==null) return;
-        inorder(root.left);
-        op.add(root.val);
-        inorder(root.right);        
-    }
     public boolean isValidBST(TreeNode root) {
-        inorder(root);
-        for(int i=1;i<op.size();i++)
+        return help(root,Long.MIN_VALUE,Long.MAX_VALUE);        
+    }
+
+    private boolean help(TreeNode root,long min,long max)
+    {
+        if(root==null)
         {
-            if(op.get(i)<=op.get(i-1)) return false;
+            return true;
         }
-        return true;        
+        if(root.val<=min || root.val>=max)
+        {
+            return false;
+        }
+        return help(root.left,min,root.val) && help(root.right,root.val,max);
     }
 }
