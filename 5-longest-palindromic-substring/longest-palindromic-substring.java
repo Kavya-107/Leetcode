@@ -19,18 +19,16 @@ class Solution {
             int l = l1>l2?l1:l2;
             if (l > max) {
     max = l;
-    if (l % 2 == 1) { // odd length
+    if (l % 2 == 1) { 
         st = i - (l - 1) / 2;
         end = i + (l - 1) / 2 ;
-    } else { // even length
+    } else { 
         st = i - (l / 2) + 1;
         end = i + (l / 2);
     }
 }
                        
         }
-        System.out.println(max);
-
         return s.substring(st,end+1);
     }
 }
