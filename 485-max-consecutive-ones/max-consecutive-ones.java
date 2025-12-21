@@ -7,16 +7,16 @@ class Solution {
             if(nums[i]==0)
             {
                 System.out.println(i);                
-                max=Math.max(max,sum);
+                max=max>sum?max:sum;
                 sum=0;
             }
             else{
-                System.out.println("uu"+i);                
+                          
 
                 sum+=1;
             }
         }
-                max=Math.max(max,sum);
+          max=max>sum?max:sum;
 
         return max;
     }
