@@ -7,11 +7,11 @@ class Solution {
                 c++;
             }
             else{
-                m=m>c?m:c;
+                m=Math.max(m,c);
                 c=0;
             }
         }
-        m=m>c?m:c;
-        return m;
+       
+        return Math.max(m,c);
     }
 }
