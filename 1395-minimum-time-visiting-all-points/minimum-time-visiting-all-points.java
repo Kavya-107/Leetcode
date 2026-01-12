@@ -1,15 +1,20 @@
 class Solution {
     public int minTimeToVisitAllPoints(int[][] points) {
-        int count  =0 ;
-        for(int i=0;i<points.length-1;i++)
-        {
-            int x = Math.abs(points[i][0] - points[i+1][0]);
-            int y= Math.abs(points[i][1]-points[i+1][1]);
-            int t= Math.min(x,y);
-            int max = Math.max(x,y);
-            count+=t;
-            count+= (max-t);
+        int min = 0;
+        int[] p = points[0];
+        for (int i = 1; i < points.length; i++) {
+            int[] c = points[i];
+            min = min + min(p, c);
+            p = c;
         }
-        return count;
+        return min;
+    }
+
+    public int min(int[] p1, int[] p2) {
+        int min = 0;
+        int dx = Math.abs(p2[0] - p1[0]);
+        int dy = Math.abs(p2[1] - p1[1]);
+        
+        return Math.max(dx,dy);
     }
 }
