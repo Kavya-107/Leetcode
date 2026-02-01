@@ -5,7 +5,7 @@ class Solution {
         {
             arr[indices[i]] = s.charAt(i);
         }
-        String r = new String(arr);
-        return r;
+        
+        return new String(arr);
     }
 }
