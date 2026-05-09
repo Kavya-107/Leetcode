@@ -4,18 +4,18 @@ class Solution {
         int len = pre.length;
         for(int i=1;i<strs.length;i++)
         {
-            int j=0,k=0;
-            while(j<len && k<strs[i].length()){
-                if(pre[j] != strs[i].charAt(k)){
+            int j=0;
+            while(j<len && j<strs[i].length()){
+                if(pre[j] != strs[i].charAt(j)){
                     len = j;
                     break;
                 }
                 j++;
-                k++;
+               
             }
-            if(k<len)
+            if(j<len)
             {
-                len=k;
+                len=j;
             }
         }
         if(len<=0) return "";
